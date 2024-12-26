@@ -1,0 +1,2 @@
+module DevUrlsHelper
+end

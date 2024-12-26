@@ -1,0 +1,3 @@
+class DevUrl < ApplicationRecord
+
+end
