@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root "urls#new"
-  resources :urls, only: [:new, :create]
+  root "dev_urls#new"
+  resources :dev_urls, only: [:new, :create, :show]
+  get '/:short', to: 'dev_urls#redirect', as: :short
 end

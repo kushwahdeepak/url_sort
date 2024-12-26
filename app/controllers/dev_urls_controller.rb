@@ -12,6 +12,19 @@ class DevUrlsController < ApplicationController
         end
       end
     
+      def show
+        @url = DevUrl.find(params[:id])
+      end
+    
+      def redirect
+        url = DevUrl.find_by(short_url: params[:short_url])
+        if url
+          redirect_to url.original, allow_other_host: true
+        else
+          render plain: "URL not found", status: :not_found
+        end
+      end
+    
       private
     
       def url_params

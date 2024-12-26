@@ -1,0 +1,4 @@
+<h1>Shortened URL</h1>
+<p>Your shortened URL is: <%= link_to short_url(@url.short_url), short_url(@url.short_url) %></p>
+<p>Original URL: <%= @url.original_url %></p>
+<%= link_to "Shorten another URL", new_dev_url_path %>
