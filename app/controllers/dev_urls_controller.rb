@@ -19,7 +19,7 @@ class DevUrlsController < ApplicationController
       def redirect
         url = DevUrl.find_by(short_url: params[:short_url])
         if url
-          redirect_to url.original, allow_other_host: true
+          redirect_to url.original_url, allow_other_host: true
         else
           render plain: "URL not found", status: :not_found
         end
